@@ -1,1 +1,8 @@
-hello there
+<h1>All Teams</h1>
+<form action="/teams" method="GET">
+  <label> Team Name </label>
+  <input type="text" name="teamName" value="<%= searchOptions.teamName %>" />
+</form>
+<% teams.forEach(team => { %>
+<div><%= team.teamName %></div>
+<% }) %>

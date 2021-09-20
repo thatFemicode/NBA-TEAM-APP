@@ -9,7 +9,7 @@ const teamSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  locationA: {
+  location: {
     type: String,
     required: true,
   },
