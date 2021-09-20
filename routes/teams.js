@@ -10,7 +10,6 @@ router.get('/', async (req, res) => {
   }
   try {
     const teams = await Team.find(searchOptions);
-    console.log(teams);
     res.render('teams/index', { teams: teams, searchOptions: req.query });
   } catch {
     res.redirect('/');
