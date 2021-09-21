@@ -21,18 +21,25 @@ const playerSchema = new mongoose.Schema({
     required: true,
     default: Date.now,
   },
-  //   coverImage: {
-  //     type: Buffer,
-  //     required: true,
-  //   },
-  //   coverImageType: {
-  //     type: String,
-  //     required: true,
-  //   },
+  coverImage: {
+    type: Buffer,
+    required: true,
+  },
+  coverImageType: {
+    type: String,
+    required: true,
+  },
   team: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
     ref: 'Team',
   },
+});
+playerSchema.virtual('coverImagePath').get(function () {
+  if (this.coverImage != null && this.coverImageType != null) {
+    return `data:${
+      this.coverImageType
+    };charset=utf-8;base64,${this.coverImage.toString('base64')}`;
+  }
 });
 module.exports = mongoose.model('Player', playerSchema);

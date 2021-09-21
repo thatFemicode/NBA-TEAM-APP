@@ -1,4 +1,4 @@
-<!-- <h2 class="page-header">Search Players</h2>
+<h2 class="page-header">Search Players</h2>
 <form action="/players" method="GET">
   <div class="form-row">
     <div class="form-item">
@@ -9,4 +9,10 @@
   <div class="form-row form-row-end">
     <button class="btn btn-primary" type="submit">Search</button>
   </div>
-</form> -->
+</form>
+<div>
+  <% players.forEach(player => { %>
+  <h1>player: <%= player.name %></h1>
+  <img src="<%= player.coverImagePath %> " alt="" />
+  <% }) %>
+</div>
