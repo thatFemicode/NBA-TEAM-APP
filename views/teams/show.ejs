@@ -1,0 +1,9 @@
+<h2><%= team.name %></h2>
+<a href="/teams/<%= team.id %>">Edit</a>
+<%- include ('../partials/deleteform', { url: `/teams/${team.id}` }) %> <% if
+(playersInTeam.length > 0) { %>
+<h2>Players In Team</h2>
+
+<% playersInTeam.forEach(player =>{ %>
+<img height="100" width="100" src=" <%=player.coverImagePath%>" alt="" />
+<% }) %> <% } %>

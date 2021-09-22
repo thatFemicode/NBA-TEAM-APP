@@ -1,1 +1,15 @@
-<h1>All Teams</h1>
+<div>
+  <% teams.forEach(team => { %> <% if (team.coverImagePath == null) { %>
+  <h1>Team: <%= team.teamName %></h1>
+  <a href="/teams/<%= team.id %>">View</a>
+  <a href="/teams/<%= team.id %>/edit">Edit</a>
+  <a href="/teams/<%= team.id %>">Delete</a>
+  <%- include('../partials/deleteform', { url: `/teams/${team.id}` }) %> <% }
+  else { %>
+  <h1>Team: <%= team.teamName %></h1>
+  <img height="150" width="150" src="<%=team.coverImagePath %> " alt="" />
+  <a href="/teams/<%= team.id %>">View</a>
+  <a href="/teams/<%= team.id %>/edit">Edit</a>
+  <%- include('../partials/deleteform', { url: `/teams/${team.id}` }) %> <% }%>
+  <% }) %>
+</div>
