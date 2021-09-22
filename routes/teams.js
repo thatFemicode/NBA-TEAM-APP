@@ -92,6 +92,9 @@ router.put('/:id', async (req, res) => {
     team.location = req.body.location;
     team.arena = req.body.arena;
     team.tag = req.body.tag;
+    if (req.body.cover != null && req.body.cover !== '') {
+      saveCover(team, req.body.cover);
+    }
     await team.save();
     res.redirect(`/teams/${team.id}`);
     // this is to save the teams in the databse

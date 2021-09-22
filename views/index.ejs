@@ -1,0 +1,6 @@
+<h1>All Players</h1>
+<% players.forEach(player => { %>
+<a href="/players/<%= player.id %>">
+  <img src="<%= player.coverImagePath %> " alt="<%= player.name %> " />
+</a>
+<% }) %>

@@ -1,0 +1,9 @@
+<h2><%= player.name %></h2>
+<img src="<%= player.coverImagePath %> " alt="" />
+<p><%= player.team.teamName %></p>
+<p><%= player.age %></p>
+<p><%= player.draftedIn.toDateString() %></p>
+<p><%= player.description %></p>
+<a class="btn btn-primary" href="/players/<%= player.id %>">View</a>
+<a class="btn btn-primary" href="/players/<%= player.id %>/edit">Edit</a>
+<a href="/players/<%= player.id %>/edit">Edit</a>

@@ -19,11 +19,11 @@ const teamSchema = new mongoose.Schema({
   },
   coverImage: {
     type: Buffer,
-    // required: true,
+    required: true,
   },
   coverImageType: {
     type: String,
-    // required: true,
+    required: true,
   },
 });
 // pre allows us to run a method before actions
